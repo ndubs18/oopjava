@@ -1,10 +1,14 @@
 public class Main {
     public static void main(String args[])
     {
-        Service newS = new FoodDelivery();
+        Service newS = new Landscaping();
+
         newS.inputName();
         newS.inputCost();
         newS.display();
+
+
+
 
     }
 }

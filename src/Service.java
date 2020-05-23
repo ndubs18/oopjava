@@ -20,8 +20,11 @@ public class Service extends Utility {
         if(input.hasNext()) {
             this.name = input.nextLine();
             return 1;
-        } else
+        } else {
+            System.out.println("The value you entered is invalid");
             return 0;
+        }
+
     }
 
     /*Takes no args and prompts the user to input the cost of the service. When the value is stored in
@@ -38,19 +41,15 @@ public class Service extends Utility {
             return 0;
         }
     }
-
     //display
     public void display() {
-        System.out.println(name);
-        System.out.println(cost);
+        System.out.println(this.name);
+        System.out.println(this.cost);
     }
 
     //PRIVATE DATA MEMBERS //
     private String name;
     private float cost;
-
-
-
 
 }
 

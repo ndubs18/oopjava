@@ -1,5 +1,6 @@
 public class FoodDelivery extends Service{
 
+
     public FoodDelivery()
     {
         this.mealCost = 0;
@@ -8,6 +9,7 @@ public class FoodDelivery extends Service{
 
     public int inputCost()
     {
+        super.inputCost();
         System.out.print("How much will the meal cost?: ");
 
         if(input.hasNextFloat())
@@ -24,6 +26,7 @@ public class FoodDelivery extends Service{
 
     //display
     public void display() {
+        super.display();
         System.out.println(mealCost);
         System.out.println(distance);
     }
