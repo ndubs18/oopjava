@@ -1,5 +1,15 @@
 public class Landscaping extends Service {
 
+    public Landscaping() {
+
+    }
+
+    public Landscaping(Landscaping to_copy) {
+        super(to_copy);
+        this.sqFt = to_copy.sqFt;
+        this.costPerSqFt = to_copy.costPerSqFt;
+
+    }
     public int inputCost() {
         super.inputCost();
 
@@ -22,9 +32,9 @@ public class Landscaping extends Service {
         }
     }
 
-    public final void display() {
+    public void display() {
         super.display();
-        System.out.println("Size of property" + this.sqFt);
+        System.out.println("Size of property: " + this.sqFt + "sqFt");
         System.out.println("cost sq/ft: $" + this.costPerSqFt);
 
     }

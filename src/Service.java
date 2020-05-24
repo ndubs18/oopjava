@@ -6,6 +6,13 @@ public class Service extends Utility {
         this.cost = 0;
     }
 
+    //copy constructor
+    public Service(final Service to_copy)
+    {
+        this.name = to_copy.name;
+        this.cost = to_copy.cost;
+    }
+
     //constructor
     public Service(String name, float cost) {
         this.name = name;
@@ -43,8 +50,22 @@ public class Service extends Utility {
     }
     //display
     public void display() {
-        System.out.println(this.name);
-        System.out.println(this.cost);
+        System.out.println("Listing Name: " + this.name);
+        System.out.println("Total Cost: " + this.cost);
+    }
+
+    public Service goLeft() {
+        return null;
+    }
+    public Service goRight() {
+        return null;
+    }
+
+    public void setLeft(Service to_set) {
+    }
+
+    public void setRight(Service to_set)
+    {
     }
 
     //PRIVATE DATA MEMBERS //
