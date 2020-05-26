@@ -54,17 +54,17 @@ public class Service extends Utility {
         System.out.println("Total Cost: " + this.cost);
     }
 
-    public Service goLeft() {
+    protected Service goLeft() {
         return null;
     }
-    public Service goRight() {
+    protected Service goRight() {
         return null;
     }
 
-    public void setLeft(Service to_set) {
+    protected void setLeft(Service to_set) {
     }
 
-    public void setRight(Service to_set)
+    protected void setRight(Service to_set)
     {
     }
 
