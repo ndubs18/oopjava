@@ -54,18 +54,17 @@ public class Service extends Utility {
         System.out.println("Total Cost: " + this.cost);
     }
 
-    protected Service goLeft() {
-        return null;
-    }
-    protected Service goRight() {
-        return null;
-    }
-
-    protected void setLeft(Service to_set) {
-    }
-
-    protected void setRight(Service to_set)
-    {
+    /*compare with return a -1 if the current Service cost is less that the argument passed in.
+    if the arguments is the same, return 0
+    else if the argument is greater than the current cost, return a 1.
+     */
+    public int compare(Service to_compare) {
+        if(this.cost < to_compare.cost)
+            return -1;
+        else if(this.cost == to_compare.cost)
+            return 0;
+        else
+            return 1;
     }
 
     //PRIVATE DATA MEMBERS //

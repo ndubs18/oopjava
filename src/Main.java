@@ -1,11 +1,15 @@
 public class Main {
     public static void main(String args[])
     {
-        Service newS = new Landscaping();
+        Landscaping land = new Landscaping();
+        BabySitting baby = new BabySitting();
 
-        newS.inputName();
-        newS.inputCost();
-        ((Landscaping) newS).inputSquareFt();
+        land.inputName();
+        land.inputCost();
+
+        baby.inputName();
+        baby.inputCost();
+
 
 
     }
