@@ -1,5 +1,9 @@
 public class Node {
 
+    public int compare(Service to_compare) {
+        return this.smaller.compare(to_compare);
+    }
+
     public int isBetween(Service to_compare) {
         if(smaller.compare(to_compare) == -1 && greater.compare(to_compare) == 1) {
             System.out.println("The new service is between");
@@ -15,7 +19,19 @@ public class Node {
         }
     }
 
+    public final void display() {
+        if(smaller != null && greater == null)
+            smaller.display();
+        else if(smaller == null && greater != null)
+            greater.display();
+        else {
+            smaller.display();
+            greater.display();
+        }
+    }
+
     public int addData(Service to_add) {
+        //if there are no keys in the this node
         if(smaller == null && greater == null) {
             smaller = new Service(to_add);
             return 1;
@@ -26,6 +42,7 @@ public class Node {
             if(smaller.compare(to_add) == -1) {
                 greater = new Service(to_add);
                 return 1;
+              //if the to_add data is smaller than the existing data
             } else {
                 greater = new Service(smaller);
                 smaller = new Service(to_add);
@@ -37,7 +54,23 @@ public class Node {
         }
     }
 
+    public Service getSmaller() {
+        return this.smaller;
+    }
 
+    public Service getGreater() {
+        return this.smaller;
+    }
+
+    public boolean removeSmaller() {
+        smaller = null;
+        return true;
+    }
+
+    public boolean removeGreater() {
+        greater = null;
+        return true;
+    }
 
     public Node goLeft() {
         return left;
@@ -51,6 +84,11 @@ public class Node {
     public void setRight(Node to_set) {
         this.right = to_set;
     }
+    public void setMiddle(Node to_set) {
+        this.middle = to_set;
+    }
+
+    private Node parent;
 
     private Service smaller;
     private Service greater;
