@@ -59,7 +59,7 @@ public class Node {
     }
 
     public Service getGreater() {
-        return this.smaller;
+        return this.greater;
     }
 
     public boolean removeSmaller() {
