@@ -17,8 +17,39 @@ public class Node {
         }
 
         return 0;
+    }
 
+    public int compare(float cost) {
+        if(greater == null)
+        {
+            if(smaller.compare(cost) == 1)
+                return -1;
+            else
+                return 1;
+        } else {
+            if(smaller.compare(cost) == 1)
+                return -1;
+            else if(greater.compare(cost) == -1)
+                return 1;
+            else if(smaller.compare(cost) == -1 && greater.compare(cost) == 1)
+                return 2;
+        }
 
+        return 0;
+    }
+
+    public int compareName(String to_compare)
+    {
+        if(smaller == null)
+            return 0;
+        else {
+            if(to_compare.equals(smaller.getName()) == true)
+                return 1;
+            else if(greater != null && to_compare.equals(greater.getName()) == true)
+                return 2;
+            else
+                return 0;
+        }
     }
 
     public int isBetween(Service to_compare) {
@@ -71,18 +102,27 @@ public class Node {
     }
 
     public Node getParent() {
-        return this.parent;
+        if(this.parent == null)
+            return null;
+        else
+            return this.parent;
     }
     public void addParent(Node to_add)
     {
         this.parent = to_add;
     }
     public Service getSmaller() {
-        return this.smaller;
+        if(this.smaller == null)
+            return null;
+        else
+            return this.smaller;
     }
 
     public Service getGreater() {
-        return this.greater;
+        if(this.greater == null)
+            return null;
+        else
+            return this.greater;
     }
 
     public boolean removeSmaller() {

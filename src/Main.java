@@ -37,6 +37,7 @@ public class Main {
                             FoodDelivery food = new FoodDelivery();
                             food.inputName();
                             food.inputCost();
+                            food.inputDistance();
 
                             tree.addService(food);
 
@@ -67,9 +68,15 @@ public class Main {
                 case 2: {
                     String name;
                     System.out.print("Enter a name of a service that you want to retrieve: ");
-
                     name = input.next();
 
+                    float cost;
+                    System.out.print("Enter the cost of that service: ");
+                    cost = input.nextFloat();
+
+                    Service retrieved = tree.retrieveByName(name,cost);
+
+                    retrieved.display();
                     //TODO: We need to make the retrieval function for our 2-3 tree
 
                     break;

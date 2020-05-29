@@ -10,8 +10,6 @@ public class Btree {
             display(root);
     }
 
-    private Node root;
-
     private void display(Node root) {
         if(root == null)
             return;
@@ -25,6 +23,7 @@ public class Btree {
     }
     public int addService(Service to_add) {
         if(root == null ) {
+            to_add.display();
             root = new Node();
             root.addData(to_add);
             return 1;
@@ -103,17 +102,25 @@ public class Btree {
             return 0;
 
         int compare = root.compare(to_add);
-        //go left
-        if(compare == -1)
-            addService(root.goLeft(), to_add);
-        else if(compare == 2) {
-            addService(root.goMiddle(), to_add);
-        } else {
-            addService(root.goRight(), to_add);
-        }
 
+        if(compare == -1) {
+            int wasAdded = addService(root.goLeft(), to_add);
+            if(wasAdded == 1)
+                return 1;
+
+        }
+        else if(compare == 2) {
+            int wasAdded = addService(root.goMiddle(), to_add);
+            if(wasAdded == 1)
+                return 1;
+        } else {
+            int wasAdded = addService(root.goRight(), to_add);
+            //we had to add this so that on the stack frame popping off, the service wouldn't get added to the parent node.
+            if(wasAdded == 1)
+                return 1;
+        }
+        //add the data to root
         int added = root.addData(to_add);
-        //TODO:why is this being run twice???
         if(added == 1) {
             return 1;
         }
@@ -168,10 +175,51 @@ public class Btree {
                     }
 
                 }
+                return 0;
             }
         }
 
         return 0;
 
     }
+
+    public Service retrieveByName(String name, float cost)
+    {
+        if(this.root == null)
+            return null;
+        else
+            return retrieveByName(this.root, name, cost);
+    }
+
+    private Service retrieveByName(Node root, String name, float cost)
+    {
+        if(root == null)
+            return null;
+
+        int compare = root.compare(cost);
+        if(compare == -1) {
+            Service retrieved = retrieveByName(root.goLeft(), name, cost);
+            if(retrieved != null)
+                return retrieved;
+        }
+        else if(compare == 2) {
+            Service retrieved = retrieveByName(root.goMiddle(), name, cost);
+            if(retrieved != null)
+                return retrieved;
+        }
+        else {
+            Service retrieved = retrieveByName(root.goRight(), name, cost);
+            if(retrieved != null)
+                return retrieved;
+        }
+
+        if(root.compareName(name) == 1)
+            return root.getSmaller();
+        else if(root.compareName(name) == 2)
+            return root.getGreater();
+        else
+            return null;
+    }
+
+    private Node root;
 }

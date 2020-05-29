@@ -24,11 +24,17 @@ public class FoodDelivery extends Service{
         }
     }
 
+    public int inputDistance() {
+        System.out.print("What is the distance traveled for this delivery?: ");
+        distance = input.nextFloat();
+        return 1;
+    }
+
     //display
     public void display() {
         super.display();
         System.out.println("Meal Cost: " + mealCost);
-        System.out.println("Distance: " + distance);
+        System.out.println("Distance Travelled: " + distance);
     }
 
     private float mealCost;

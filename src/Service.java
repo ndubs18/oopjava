@@ -34,6 +34,13 @@ public class Service extends Utility {
 
     }
 
+    public String getName() {
+        if(name == null)
+            return null;
+        else
+            return this.name;
+    }
+
     /*Takes no args and prompts the user to input the cost of the service. When the value is stored in
     the cost data member, return a 1. If the user input is not a floating point value, return a 0 */
     public int inputCost()
@@ -62,6 +69,14 @@ public class Service extends Utility {
         if(this.cost < to_compare.cost)
             return -1;
         else if(this.cost == to_compare.cost)
+            return 0;
+        else
+            return 1;
+    }
+    public int compare(float cost) {
+        if(this.cost < cost)
+            return -1;
+        else if(this.cost == cost)
             return 0;
         else
             return 1;
