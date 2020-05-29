@@ -27,10 +27,9 @@ public class FoodDelivery extends Service{
     //display
     public void display() {
         super.display();
-        System.out.println(mealCost);
-        System.out.println(distance);
+        System.out.println("Meal Cost: " + mealCost);
+        System.out.println("Distance: " + distance);
     }
-
 
     private float mealCost;
     private float distance;

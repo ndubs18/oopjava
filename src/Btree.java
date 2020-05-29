@@ -106,12 +106,11 @@ public class Btree {
         //go left
         if(compare == -1)
             addService(root.goLeft(), to_add);
-        //go middle
         else if(compare == 2) {
             addService(root.goMiddle(), to_add);
-            //go right
-        } else
+        } else {
             addService(root.goRight(), to_add);
+        }
 
         int added = root.addData(to_add);
         //TODO:why is this being run twice???
