@@ -37,6 +37,14 @@ public class FoodDelivery extends Service{
         System.out.println("Distance Travelled: " + distance);
     }
 
+    //getters
+    public float getMealCost() {
+        return this.mealCost;
+    }
+    public float getDistance() {
+        return this.distance;
+    }
+
     private float mealCost;
     private float distance;
 }

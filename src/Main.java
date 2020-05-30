@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) throws IOException {
+
         //for user input
         Scanner input;
         input = new Scanner(System.in);
@@ -40,6 +41,8 @@ public class Main {
                             food.inputDistance();
 
                             tree.addService(food);
+
+                            WriteToFile write = new WriteToFile(food);
 
                             break;
                         }

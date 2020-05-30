@@ -33,12 +33,15 @@ public class Service extends Utility {
         }
 
     }
-
+    //getters
     public String getName() {
         if(name == null)
             return null;
         else
             return this.name;
+    }
+    public float getCost() {
+        return this.cost;
     }
 
     /*Takes no args and prompts the user to input the cost of the service. When the value is stored in
