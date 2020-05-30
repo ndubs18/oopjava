@@ -37,6 +37,13 @@ public class BabySitting extends Service {
 
     }
 
+    public int getNumKids() {
+        return this.numKids;
+    }
+    public float getCostPerKid() {
+        return this.costPerKid;
+    }
+
     private int numKids;
     private float costPerKid;
 }

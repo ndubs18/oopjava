@@ -39,6 +39,14 @@ public class Landscaping extends Service {
 
     }
 
+    //getters
+    public float getSqFt() {
+        return this.sqFt;
+    }
+    public float getCostSqFt() {
+        return this.costPerSqFt;
+    }
+
     private float sqFt;
     private float costPerSqFt;
 }

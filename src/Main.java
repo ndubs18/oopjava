@@ -53,6 +53,7 @@ public class Main {
                             land.inputSquareFt();
 
                             tree.addService(land);
+                            WriteToFile write = new WriteToFile(land);
                             break;
                         }
 
@@ -63,6 +64,7 @@ public class Main {
                             baby.inputNumKids();
 
                             tree.addService(baby);
+                            WriteToFile write = new WriteToFile(baby);
                             break;
                         } default: System.out.println("The menu choice you entered was invalid");
                     }
@@ -80,8 +82,6 @@ public class Main {
                     Service retrieved = tree.retrieveByName(name,cost);
 
                     retrieved.display();
-                    //TODO: We need to make the retrieval function for our 2-3 tree
-
                     break;
                 }
 

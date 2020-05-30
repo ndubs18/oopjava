@@ -17,9 +17,12 @@ public class WriteToFile {
             pw.println(food.getName() + '|' + food.getCost() + '|' + food.getMealCost() + '|' + food.getDistance());
         }
         else if(to_write instanceof Landscaping) {
+            Landscaping land = (Landscaping)to_write;
+            pw.println(land.getName() + '|' + land.getCost() + '|' + land.getSqFt() + '|' + land.getCostSqFt());
 
         } else {
-
+            BabySitting baby = (BabySitting)to_write;
+            pw.println(baby.getName() + '|' + baby.getCost() + '|' + baby.getNumKids() + '|' + baby.getCostPerKid());
         }
 
         //make sure to close the file
