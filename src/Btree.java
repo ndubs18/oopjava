@@ -1,3 +1,5 @@
+/* Nick Winkler -- CS202 -- Fant -- Btree.java
+* This file holds the class interface for our Btree class*/
 public class Btree {
     public Btree() {
         root = null;
@@ -23,7 +25,6 @@ public class Btree {
     }
     public int addService(Service to_add) {
         if(root == null ) {
-            to_add.display();
             root = new Node();
             root.addData(to_add);
             return 1;

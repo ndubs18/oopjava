@@ -1,3 +1,5 @@
+/* Nick Winkler -- CS202 -- Fant -- Node.java
+* This file holds the class interface for our Node class*/
 public class Node {
 
     public int compare(Service to_compare) {

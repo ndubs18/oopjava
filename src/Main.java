@@ -1,3 +1,8 @@
+/* Nick Winkler -- CS202 -- Fant -- Main.java
+* This class/file holds the primary calling routine for our program. The client is presented
+* with a menu where they have 3 different actions to choose from. The user is able to continue
+* to manage service until they instruct that they are finished. Every new service created will be written
+* to the external file services.txt */
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {

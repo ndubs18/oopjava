@@ -1,7 +1,10 @@
+/* Nick Winkler -- CS202 -- Fant -- Landscaping.java
+* This file holds the class interface for our Landscaping class*/
 public class Landscaping extends Service {
 
     public Landscaping() {
-
+        this.sqFt = 0;
+        this.costPerSqFt = 0;
     }
 
     public Landscaping(Landscaping to_copy) {

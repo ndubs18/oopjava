@@ -1,8 +1,16 @@
+/* Nick Winkler -- CS202 -- Fant -- BabySitting.java
+* This file holds the class interface for our BabySitting class*/
 public class BabySitting extends Service {
 
-    BabySitting() {
+    public BabySitting() {
         this.numKids = 0;
         this.costPerKid = 0;
+    }
+
+    public BabySitting(BabySitting to_copy) {
+        super(to_copy);
+        this.numKids = to_copy.numKids;
+        this.costPerKid = to_copy.costPerKid;
     }
     public int inputCost() {
 

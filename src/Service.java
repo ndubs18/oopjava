@@ -1,4 +1,5 @@
-
+/* Nick Winkler -- CS202 -- Fant -- Service.java
+* This file holds the class interface for our Service common base class*/
 public class Service extends Utility {
     //default constructor
     public Service() {
@@ -31,7 +32,6 @@ public class Service extends Utility {
             System.out.println("The value you entered is invalid");
             return 0;
         }
-
     }
     //getters
     public String getName() {

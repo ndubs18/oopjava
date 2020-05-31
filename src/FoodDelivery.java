@@ -1,10 +1,17 @@
-public class FoodDelivery extends Service{
+/* Nick Winkler -- CS202 -- Fant -- FoodDelivery.java
+ * This file holds the class interface for our Landscaping class*/
 
+public class FoodDelivery extends Service{
 
     public FoodDelivery()
     {
         this.mealCost = 0;
         this.distance = 0;
+    }
+    public FoodDelivery(FoodDelivery to_copy) {
+        super(to_copy);
+        this.mealCost = to_copy.mealCost;
+        this.distance = to_copy.distance;
     }
 
     public int inputCost()
